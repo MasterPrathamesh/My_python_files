@@ -1,0 +1,71 @@
+from tkinter import *
+
+base = Tk()
+base.geometry("500x300")
+
+mb = Menu(base)
+
+file = Menu(mb, tearoff=False)
+mb.add_cascade(menu=file, label="File")
+
+newsub = Menu(file, tearoff=False)
+newsub.add_command(label="Normal Text")
+newsub.add_command(label="HTML Page")
+newsub.add_separator()
+newsub.add_command(label="C/C++")
+newsub.add_command(label="Java")
+newsub.add_command(label="Python")
+file.add_cascade(label="New         Ctrl+N", menu=newsub)
+
+file.add_command(label="Open        Ctrl+O")
+file.add_command(label="Close")
+file.add_command(label="Close All")
+file.add_separator()
+file.add_command(label="Save         Ctrl+S")
+file.add_command(label="Save AS      Ctrl+shift+S")
+file.add_separator()
+file.add_command(label="Print")
+file.add_command(label="Print Preview")
+
+printsub = Menu(file, tearoff=False)
+printsub.add_command(label="Print Setup")
+printsub.add_command(label="Print Direct")
+printsub.add_separator()
+printsub.add_command(label="Print All")
+file.add_cascade(label="Print Others", menu=printsub)
+
+file.add_separator()
+file.add_command(label="Save & Exit")
+file.add_command(label="Exit")
+
+edit = Menu(mb, tearoff=False)
+mb.add_cascade(menu=edit, label="Edit")
+edit.add_command(label="Undo")
+edit.add_command(label="Redo")
+edit.add_separator()
+edit.add_command(label="Cut")
+edit.add_command(label="Copy")
+edit.add_command(label="Paste")
+edit.add_command(label="Delete")
+edit.add_separator()
+edit.add_command(label="Find...")
+edit.add_command(label="Find Next")
+edit.add_command(label="Find Previous")
+edit.add_command(label="Replace")
+edit.add_command(label="Go To")
+edit.add_separator()
+edit.add_command(label="Select All")
+
+format = Menu(mb, tearoff=False)
+mb.add_cascade(menu=format, label="Format")
+format.add_command(label="Word Wrap")
+format.add_command(label="Font...")
+
+m4 = Menu(mb, tearoff=False)
+mb.add_cascade(menu=m4, label="View")
+m4.add_command(label="Zoom")
+m4.add_command(label="Status Bar")
+
+base.configure(menu=mb)
+
+base.mainloop()
